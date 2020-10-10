@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddView default render is as expected 1`] = `
+<PaymentForm
+  buttonMessage="Add new payment"
+  description="Keep track of your household spending by adding your bills"
+  onClick={[Function]}
+  title="Enter your details"
+/>
+`;
