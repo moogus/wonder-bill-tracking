@@ -25,7 +25,7 @@ const PaymentItem = ({
           direction="row"
           justify="space-between"
         >
-        <Grid item className={styles.gridItem}>
+        <Grid item>
           <Typography
             variant="h4"
             component="p"
@@ -34,7 +34,7 @@ const PaymentItem = ({
             {name}
           </Typography>
         </Grid>
-        <Grid item className={styles.gridItem}>
+        <Grid item>
           <Typography
             variant="h4"
             component="p"
@@ -50,14 +50,14 @@ const PaymentItem = ({
           direction="row"
           justify="space-between"
         >
-        <Grid item className={styles.gridItem}>
+        <Grid item>
           <Typography
             variant="body2"
             className={styles.greyText}>
             {frequency}
           </Typography>
         </Grid>
-        <Grid item className={styles.gridItem}>
+        <Grid item>
           <Typography
             variant="body2"
             className={classnames(styles.greyText, styles.rightAlign)}>
