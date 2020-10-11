@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditView payment is not passed to the Edit route default render is as expected 1`] = `
+<PaymentForm
+  buttonMessage="Save"
+  description="If you'd like to edit your bill you can change the details below"
+  onClick={[Function]}
+  onDelete={[Function]}
+  payment={null}
+  title=""
+/>
+`;
+
+exports[`EditView payment is passed to the Edit route default render is as expected 1`] = `
+<PaymentForm
+  buttonMessage="Save"
+  description="If you'd like to edit your bill you can change the details below"
+  onClick={[Function]}
+  onDelete={[Function]}
+  payment={
+    Object {
+      "amount": "bar",
+      "frequency": "always",
+      "id": 0,
+      "name": "foo",
+      "startDate": "baz",
+    }
+  }
+  title="foo"
+/>
+`;

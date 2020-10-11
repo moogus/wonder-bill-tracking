@@ -19,6 +19,7 @@ const PaymentForm = ({
 }) => {
   const styles = useStyles();
   const [fieldError, setFieldError] = useState(false);
+  const [frequencyValid, setFrequencyValid] = useState(true);
   const [canDelete, setCanDelete] = useState(false);
   const [form, setForm] = useState({
     name: '',
@@ -43,6 +44,16 @@ const PaymentForm = ({
   } = form;
 
   const formIsValid = () => name && amount && startDate && frequency;
+  const validFrequency = () => {
+    if (frequency.toLowerCase() === 'weekly'
+    || frequency.toLowerCase() === 'monthly'
+    || frequency.toLowerCase() === 'annually') {
+      setFrequencyValid(false);
+      return true;
+    }
+    setFrequencyValid(false);
+    return false;
+  };
 
   return (
       <Grid
@@ -69,7 +80,10 @@ const PaymentForm = ({
               name: value,
             });
           }}
-          value={name}/>
+          value={name}
+          helperText={`${fieldError && !name
+            ? 'This is a required field.'
+            : ''}`}/>
       </Grid>
 
       <Grid item className={styles.gridItem}>
@@ -90,7 +104,10 @@ const PaymentForm = ({
               amount: value,
             });
           }}
-          value={amount}/>
+          value={amount}
+          helperText={`${fieldError && !amount
+            ? 'This is a required field.'
+            : ''}`}/>
       </Grid>
 
       <Grid item className={styles.gridItem}>
@@ -111,7 +128,10 @@ const PaymentForm = ({
               startDate: value,
             });
           }}
-          value={startDate}/>
+          value={startDate}
+          helperText={`${fieldError && !startDate
+            ? 'This is a required field.'
+            : ''}`}/>
       </Grid>
 
       <Grid item className={classnames(styles.gridItem, styles.bottomMargin)}>
@@ -123,22 +143,28 @@ const PaymentForm = ({
           margin="normal"
           autoComplete="off"
           aria-label="bill frequency"
-          error={fieldError && !frequency}
+          error={!frequencyValid}
           onChange={(e) => {
             const { target: { value = '' } } = e;
             value.trim();
+            setFrequencyValid(true);
             setForm({
               ...form,
               frequency: value,
             });
           }}
-          value={frequency}/>
+          value={frequency}
+          helperText={`${!frequencyValid
+            ? 'Allowed values weekly, monthly, annually'
+            : '(weekly, monthly, annually)'}`
+                 }
+          />
       </Grid>
 
       <Grid item className={styles.gridItem}>
         <StyledButton message={buttonMessage}
         onClick={() => {
-          if (formIsValid()) {
+          if (formIsValid() && validFrequency()) {
             setFieldError(false);
             onClick(form);
           } else {

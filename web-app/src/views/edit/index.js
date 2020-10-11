@@ -3,13 +3,9 @@ import { navigate } from 'gatsby';
 import { updatePayment, deletePayment } from 'state/payments';
 import EditView from './edit';
 
-const mapStateToProps = ({ payments }, { id }) => {
-  const payment = payments.find((p) => p.id === parseInt(id, 10));
-
-  return {
-    payment,
-  };
-};
+const mapStateToProps = ({ payments }, { id }) => ({
+  payment: payments.find((p) => p.id === parseInt(id, 10)),
+});
 
 const mapDispatchToProps = (dispatch) => ({
   updatePayment: (payment) => {
