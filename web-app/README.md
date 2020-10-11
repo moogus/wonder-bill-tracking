@@ -6,6 +6,10 @@ I've not spent as much time in the redux area as I'd like, I've added a test aro
 
 I've added tests as an example of testing. I'd aim for about 80+ code coverage on unit tests and functional tests both working against a form of stub apis and test environment in a commercial product.
 
+- [reducer test](https://github.com/moogus/wonder-bill-tracking/blob/main/web-app/src/state/payment.spec.js)
+- [simple component test](https://github.com/moogus/wonder-bill-tracking/blob/main/web-app/src/views/add/add.spec.js)
+- [slightly more complex component test](https://github.com/moogus/wonder-bill-tracking/blob/main/web-app/src/views/edit/edit.spec.js)
+
 Hope you like what I've done
 
 **To run the site from the project folder run the following:**

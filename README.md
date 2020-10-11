@@ -1,31 +1,31 @@
-# README #
+# Wonderbill trade test
 
-At WonderBill we allow users to manually keep track of any regular payments.
-These payments could be anything, but common examples are rent and mortgage payments.
+This is my submission. I haven't got everything done, but I've tried to showcase a few different skills. I ported the project to [Gatsby](https://www.gatsbyjs.com/) as it allowed me to rapidly implement the UI using [Material UI](https://material-ui.com/), a design system I am quite familiar with.
 
-## Task Definition ##
+I've not spent as much time in the redux area as I'd like, I've added a test around one of the reducer functions.  
 
-We would like you to build a React application that allows the management of regular payments.
-A basic React application has been provided that you may use as the base of your work, it is built using `Create React App` and includes `Redux Toolkit` and `React Router`.
-A simple Node API has been provided that can be used to store, modify, retrieve and delete payments.
+I've added tests as an example of testing. I'd aim for about 80+ code coverage on unit tests and functional tests both working against a form of stub apis and test environment in a commercial product.
 
-_Please note, the API stores objects in-memory, there is no database, therefore all objects are lost when the server is stopped!_
+- [reducer test](https://github.com/moogus/wonder-bill-tracking/blob/main/web-app/src/state/payment.spec.js)
+- [simple component test](https://github.com/moogus/wonder-bill-tracking/blob/main/web-app/src/views/add/add.spec.js)
+- [slightly more complex component test](https://github.com/moogus/wonder-bill-tracking/blob/main/web-app/src/views/edit/edit.spec.js)
+
+Hope you like what I've done
+
+**To run the site from the project folder run the following:**
+```bash
+  cd web-app && yarn && yarn start # build and run the project on http://localhost:8000/
+  yarn test # run the tests in the project
+```
 
 ## Requirements ##
 
-- Built using React
-- State management handled by Redux
-- Payments are stored in the API
-- Appearance matches the provided design (as a rough guide)
-- Ability to add a regular payment with a name, amount, start date and frequency (weekly, monthly, annually)
-- Ability to modify a regular payment (name, amount, start date and frequency)
-- Ability to delete a regular payment
-- Web app should work on the latest version of Chrome
-- Unit test where appropriate
-
-## Submission ##
-
-Please provide a URL to a public repository containing your task submission.
-Instructions on how to run the script are useful to include.
-
-### Thank you for your time and effort! ###
+- Built using React ✅
+- State management handled by Redux ✅
+- Payments are stored in the API ❌(started to run out of time maybe we can have a chat about how I would have approached this.)
+- Appearance matches the provided design (as a rough guide) ✅
+- Ability to add a regular payment with a name, amount, start date and frequency (weekly, monthly, annually) ✅
+- Ability to modify a regular payment (name, amount, start date and frequency) ✅
+- Ability to delete a regular payment ✅
+- Web app should work on the latest version of Chrome ✅
+- Unit test where appropriate ✅❌(added jest setup with enzyme, added an example of basic snapshot test, added function unit test and a slightly more advanced component test.)
