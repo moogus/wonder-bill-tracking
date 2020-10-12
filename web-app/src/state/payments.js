@@ -33,6 +33,10 @@ const paymentsSlice = createSlice({
   },
 });
 
+export const getPaymentsSelector = ({ payments }, id) => payments.find(
+  (p) => p.id === parseInt(id, 10),
+);
+
 const { actions, reducer } = paymentsSlice;
 export const { createPayment, updatePayment, deletePayment } = actions;
 export default reducer;

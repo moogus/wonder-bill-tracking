@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { navigate } from 'gatsby';
-import { updatePayment, deletePayment } from 'state/payments';
+import { updatePayment, deletePayment, getPaymentsSelector } from 'state/payments';
 import EditView from './edit';
 
-const mapStateToProps = ({ payments }, { id }) => ({
-  payment: payments.find((p) => p.id === parseInt(id, 10)),
+const mapStateToProps = (state, { id }) => ({
+  payment: getPaymentsSelector(state, id),
 });
 
 const mapDispatchToProps = (dispatch) => ({
